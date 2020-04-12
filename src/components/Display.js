@@ -1,19 +1,27 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Heloo</Text>
-    </View>
-  );
-}
+import React from 'react'
+import {StyleSheet, Text, Dimensions, TouchableHighlight, View} from 'react-native'
 
 const styles = StyleSheet.create({
-  container: {
+  display: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent:'center',
+    padding: 20,
+    backgroundColor:'#4282AF',
+    alignItems: 'flex-end' 
   },
-});
+  displayValue: {
+    fontSize: 60,
+    color: '#ffffff',
+    }
+})
+
+export default props => {
+  return( 
+    <View style={styles.display}>
+        <Text 
+              style={styles.displayValue}
+              numberOfLines={1}>{props.value}
+        </Text>
+    </View>
+  )
+}
