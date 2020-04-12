@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Button from './src/components/Button'
 import Display from './src/components/Display'
-//AdMod
-// ca-app-pub-2163315219789546~8086203261
-// ID do Banner
-// ca-app-pub-2163315219789546/2559625987
+
 
 const initialState = {
   displayValue: '0',
@@ -41,6 +38,9 @@ export default class App extends Component {
     this.setState({...initialState})
   }
   setOperation = operation => {
+    if(this.state.current === 0) {
+      this.setState({ operation, current: 1, clearDisplay: true})
+    }
 
   }
   
